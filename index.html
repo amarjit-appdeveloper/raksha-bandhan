@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Raksha Bandhan | Prity & Brothers</title>
+    <!-- Royal Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@600;700;800;900&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700;800;900&family=Rozha+One&family=Yatra+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Audio Player (Using video.mp4 audio) -->
+    <audio id="bgAudio" src="video.mp4" preload="auto" loop></audio>
+
+    <!-- Canvas for Floating Sparkles, Hearts, Fireworks & Diamond Particle Sequence -->
+    <canvas id="mainCanvas"></canvas>
+
+    <!-- Soundwave Laser Bars (During 3-2-1 Surprise) -->
+    <div id="laserBars" class="laser-bars-wrap">
+        <div class="laser-line top-laser"></div>
+        <div class="laser-line bottom-laser"></div>
+    </div>
+
+    <!-- ================= FIXED NAVBAR ================= -->
+    <header class="app-header" id="mainHeader">
+        <div class="header-logo">
+            <span class="logo-icon spin-icon">🪢</span>
+            <span class="logo-text">Raksha Bandhan</span>
+        </div>
+
+        <nav class="nav-links" id="navLinks">
+            <a href="#heroSection" class="nav-link active">🏠 Home</a>
+            <a href="#ritualSection" class="nav-link">🪢 Virtual Rakhi</a>
+            <a href="#gallerySection" class="nav-link">📸 Memories 3D</a>
+            <a href="#letterSection" class="nav-link">💌 Letter</a>
+            <a href="#giftSection" class="nav-link">🎁 Gift</a>
+            <a href="#quizSection" class="nav-link">🎮 Quiz</a>
+            <a href="#cardGenSection" class="nav-link">🖼️ Card Maker</a>
+            <a href="#certificateSection" class="nav-link">🏆 Certificate</a>
+            <a href="#wishesSection" class="nav-link">💬 Wishes</a>
+        </nav>
+
+        <div class="header-actions">
+            <button id="audioToggleBtn" class="header-btn" title="Toggle Festive Music">
+                <span class="btn-icon">🎵</span>
+                <span id="audioStatusTxt" class="btn-lbl">Music: ON</span>
+            </button>
+            <button id="quickShareBtn" class="header-btn gold-btn" title="Share Website">
+                <span class="btn-icon">📲</span>
+                <span class="btn-lbl">Share</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Floating Scroll Indicator / Back to Top Button -->
+    <button id="backToTopBtn" class="floating-scroll-btn" title="Scroll to Top">
+        <span>⬆️</span>
+    </button>
+
+    <!-- Festive Toran Hanging Garland -->
+    <div class="festive-toran">
+        <div class="toran-thread"></div>
+        <div class="toran-flowers">
+            <span class="flower y-fl"></span><span class="flower o-fl"></span><span class="flower g-leaf"></span>
+            <span class="flower o-fl"></span><span class="flower y-fl"></span><span class="flower g-leaf"></span>
+            <span class="flower y-fl"></span><span class="flower o-fl"></span><span class="flower g-leaf"></span>
+            <span class="flower o-fl"></span><span class="flower y-fl"></span><span class="flower g-leaf"></span>
+            <span class="flower y-fl"></span><span class="flower o-fl"></span><span class="flower y-fl"></span>
+        </div>
+    </div>
+
+
+    <!-- ================= MAIN SINGLE-PAGE CONTAINER ================= -->
+    <main class="main-container">
+
+        <!-- ================= 1. GRAND FESTIVE OPENING HERO (MATCHING USER REFERENCE) ================= -->
+        <section id="heroSection" class="grand-hero-festive scroll-reveal in-view">
+            
+            <!-- Festive Fireworks & Lights Backdrop -->
+            <div class="grand-hero-backdrop">
+                <img src="neon_heart_celebration_bg.jpg" alt="Festive Night Celebration" class="hero-backdrop-img">
+                <div class="hero-backdrop-glow-overlay"></div>
+            </div>
+
+            <div class="hero-stage-content">
+                
+                <!-- Main Row: Left Polaroid + Radiant Neon Heart + Right Polaroid -->
+                <div class="hero-heart-showcase-row">
+                    
+                    <!-- Left Polaroid Frame with Fairy String Lights -->
+                    <div class="fairy-polaroid-frame frame-left card-3d-tilt">
+                        <div class="fairy-lights-string">
+                            <span class="bulb b1"></span>
+                            <span class="bulb b2"></span>
+                            <span class="bulb b3"></span>
+                            <span class="bulb b4"></span>
+                            <span class="bulb b5"></span>
+                            <span class="bulb b6"></span>
+                            <span class="bulb b7"></span>
+                            <span class="bulb b8"></span>
+                        </div>
+                        <div class="polaroid-photo-box">
+                            <img src="memory_rakhi_celebration.jpg" alt="Sibling Memory" class="polaroid-img">
+                        </div>
+                        <div class="polaroid-caption">Sacred Bond ❤️</div>
+                    </div>
+
+                    <!-- Center: Radiant Glowing Neon Heart -->
+                    <div class="grand-neon-heart-wrapper">
+                        <svg viewBox="0 0 520 480" class="grand-neon-heart-svg">
+                            <defs>
+                                <linearGradient id="neonGoldRedGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#ff3366" />
+                                    <stop offset="35%" stop-color="#ff0033" />
+                                    <stop offset="75%" stop-color="#ff9900" />
+                                    <stop offset="100%" stop-color="#ffd700" />
+                                </linearGradient>
+                                <filter id="superNeonGlow" x="-50%" y="-50%" width="200%" height="200%">
+                                    <feGaussianBlur stdDeviation="10" result="blur1"/>
+                                    <feGaussianBlur stdDeviation="22" result="blur2"/>
+                                    <feMerge>
+                                        <feMergeNode in="blur2"/>
+                                        <feMergeNode in="blur1"/>
+                                        <feMergeNode in="SourceGraphic"/>
+                                    </feMerge>
+                                </filter>
+                            </defs>
+                            <path class="grand-heart-neon-path" d="M 260 440 C 80 310 20 205 20 115 C 20 45 75 15 150 15 C 210 15 245 55 260 90 C 275 55 310 15 370 15 C 445 15 500 45 500 115 C 500 205 440 310 260 440 Z" />
+                        </svg>
+
+                        <div class="grand-heart-content">
+                            
+                            <!-- Flanking Golden Kundan Rakhis & Top Sub -->
+                            <div class="heart-top-rakhis-row">
+                                <div class="mini-kundan-deco left">
+                                    <span class="thread-line"></span>
+                                    <span class="gem-badge">💮</span>
+                                    <span class="thread-line"></span>
+                                </div>
+                                <span class="heart-top-title">HAPPY</span>
+                                <div class="mini-kundan-deco right">
+                                    <span class="thread-line"></span>
+                                    <span class="gem-badge">💮</span>
+                                    <span class="thread-line"></span>
+                                </div>
+                            </div>
+
+                            <!-- 3D Gold Embossed Main Title -->
+                            <h1 class="grand-raksha-text">RAKSHA</h1>
+                            <h1 class="grand-bandhan-text">BANDHAN</h1>
+
+                            <!-- Cursive Script Subtitle -->
+                            <p class="grand-script-sub">Always & Forever</p>
+
+                            <!-- Golden Filigree Heart Divider -->
+                            <div class="heart-filigree-divider">
+                                <span class="f-line"></span>
+                                <span class="f-tag">💌 With Love 💌</span>
+                                <span class="f-line"></span>
+                            </div>
+
+                            <!-- Dedicated Names Tag -->
+                            <div class="heart-dedicated-names">
+                                <span class="sis-name" id="heroSisterName">Prity</span>
+                                <span class="heart-sep">❤️</span>
+                                <span class="bro-name" id="heroBrotherName">Amarjit, Ravishankar, Harishankar, Sumit</span>
+                            </div>
+
+                            <!-- Big Festive START THE CELEBRATION CTA Button -->
+                            <div class="heart-cta-wrap">
+                                <a href="#ritualSection" id="mainStartCelebrationBtn" class="grand-celebration-cta-btn scroll-link">
+                                    <span class="sparkle-ico">🎉</span>
+                                    <span>START THE CELEBRATION</span>
+                                    <span class="sparkle-ico">🎉</span>
+                                </a>
+                                <div class="bounce-down-indicator">
+                                    <span class="chevron-arrow">⬇️</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Right Polaroid Frame with Fairy String Lights -->
+                    <div class="fairy-polaroid-frame frame-right card-3d-tilt">
+                        <div class="fairy-lights-string">
+                            <span class="bulb b1"></span>
+                            <span class="bulb b2"></span>
+                            <span class="bulb b3"></span>
+                            <span class="bulb b4"></span>
+                            <span class="bulb b5"></span>
+                            <span class="bulb b6"></span>
+                            <span class="bulb b7"></span>
+                            <span class="bulb b8"></span>
+                        </div>
+                        <div class="polaroid-photo-box">
+                            <img src="memory_birthday_21.jpg" alt="Sibling Memory" class="polaroid-img">
+                        </div>
+                        <div class="polaroid-caption">Forever Together 👑</div>
+                    </div>
+
+                </div>
+
+
+                <!-- Live Raksha Bandhan Countdown Clock Strip -->
+                <div class="hero-live-countdown-strip">
+                    <span class="live-cd-label">⏳ RAKSHA BANDHAN CELEBRATION COUNTDOWN ⏳</span>
+                    <div class="live-cd-digits-row">
+                        <div class="cd-item"><span class="digit" id="daysVal">00</span><span class="lbl">DAYS</span></div>
+                        <span class="colon">:</span>
+                        <div class="cd-item"><span class="digit" id="hoursVal">00</span><span class="lbl">HOURS</span></div>
+                        <span class="colon">:</span>
+                        <div class="cd-item"><span class="digit" id="minsVal">00</span><span class="lbl">MINS</span></div>
+                        <span class="colon">:</span>
+                        <div class="cd-item"><span class="digit" id="secsVal">00</span><span class="lbl">SECS</span></div>
+                    </div>
+                </div>
+
+
+                <!-- BOTTOM 6 QUICK FEATURE NAVIGATION CARDS BAR -->
+                <div class="hero-feature-dock-bar">
+                    
+                    <a href="#ritualSection" class="feature-dock-card scroll-link">
+                        <div class="dock-icon-box">
+                            <span class="dock-icon">🪢</span>
+                        </div>
+                        <span class="dock-title">VIRTUAL RAKHI</span>
+                        <span class="dock-sub">Tie the sacred thread</span>
+                    </a>
+
+                    <a href="#ritualSection" class="feature-dock-card scroll-link">
+                        <div class="dock-icon-box">
+                            <span class="dock-icon">🪔</span>
+                        </div>
+                        <span class="dock-title">TILAK & AARTI</span>
+                        <span class="dock-sub">Sacred holy rituals</span>
+                    </a>
+
+                    <a href="#gallerySection" class="feature-dock-card scroll-link">
+                        <div class="dock-icon-box">
+                            <span class="dock-icon">📸</span>
+                        </div>
+                        <span class="dock-title">MEMORIES</span>
+                        <span class="dock-sub">Moments to cherish</span>
+                    </a>
+
+                    <a href="#letterSection" class="feature-dock-card scroll-link">
+                        <div class="dock-icon-box">
+                            <span class="dock-icon">💌</span>
+                        </div>
+                        <span class="dock-title">SPECIAL MESSAGE</span>
+                        <span class="dock-sub">Letter from the heart</span>
+                    </a>
+
+                    <a href="#giftSection" class="feature-dock-card scroll-link">
+                        <div class="dock-icon-box">
+                            <span class="dock-icon">🎁</span>
+                        </div>
+                        <span class="dock-title">SURPRISE GIFT</span>
+                        <span class="dock-sub">Special gift for you</span>
+                    </a>
+
+                    <a href="#quizSection" class="feature-dock-card scroll-link">
+                        <div class="dock-icon-box">
+                            <span class="dock-icon">🏆</span>
+                        </div>
+                        <span class="dock-title">SIBLING QUIZ</span>
+                        <span class="dock-sub">How well do you know</span>
+                    </a>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ================= 2. VIRTUAL RAKHI CEREMONY (5-STEP INTERACTIVE WORKFLOW) ================= -->
+        <section id="ritualSection" class="section-card ritual-section scroll-reveal">
+            
+            <!-- Section Header -->
+            <div class="section-title-wrap">
+                <span class="pill-badge">INTERACTIVE CEREMONY • 5 STEPS</span>
+                <h2 class="title-text">🪢 Virtual Rakhi Tying & Celebration</h2>
+                <p class="subtitle-text">Choose your favourite Rakhi, drag & tie it on brother's wrist, and perform sacred rituals!</p>
+            </div>
+
+            <!-- Step Progress Navigation Bar -->
+            <div class="rakhi-steps-nav">
+                <div class="step-nav-item active" data-step="1">
+                    <span class="step-num">1</span>
+                    <span class="step-lbl">1. Choose Rakhi</span>
+                </div>
+                <div class="step-nav-item" data-step="2">
+                    <span class="step-num">2</span>
+                    <span class="step-lbl">2. Drag Rakhi</span>
+                </div>
+                <div class="step-nav-item" data-step="3">
+                    <span class="step-num">3</span>
+                    <span class="step-lbl">3. Tying Animation</span>
+                </div>
+                <div class="step-nav-item" data-step="4">
+                    <span class="step-num">4</span>
+                    <span class="step-lbl">4. Rakhi Tied</span>
+                </div>
+                <div class="step-nav-item" data-step="5">
+                    <span class="step-num">5</span>
+                    <span class="step-lbl">5. Celebration</span>
+                </div>
+            </div>
+
+
+            <!-- ================= STEP 1: CHOOSE YOUR RAKHI ================= -->
+            <div class="rakhi-step-view active" id="rakhiStep1">
+                <div class="choose-rakhi-card">
+                    <h3 class="step-heading-title">Choose Your Rakhi ❤️</h3>
+                    <p class="step-heading-sub">Select a Rakhi to tie for your Brother (<span id="chooseBroName">Amarjit, Ravishankar, Harishankar, Sumit</span>)</p>
+
+                    <!-- 6 Rakhi Selection Cards Grid -->
+                    <div class="rakhi-selection-grid">
+                        
+                        <!-- Rakhi 1: Royal Kundan -->
+                        <div class="rakhi-option-card selected" data-rakhi-id="kundan" data-rakhi-name="Royal Kundan Gold Rakhi">
+                            <div class="rakhi-card-badge">✓</div>
+                            <div class="rakhi-art-display">
+                                <div class="rakhi-render-item kundan-rakhi">
+                                    <div class="thread red-thread left"></div>
+                                    <div class="dial gold-disc">
+                                        <div class="ruby-center"></div>
+                                        <div class="pearl-ring"></div>
+                                    </div>
+                                    <div class="thread red-thread right"></div>
+                                </div>
+                            </div>
+                            <span class="rakhi-name-label">Royal Kundan Gold</span>
+                        </div>
+
+                        <!-- Rakhi 2: Evil Eye Protection -->
+                        <div class="rakhi-option-card" data-rakhi-id="evileye" data-rakhi-name="Evil Eye Protection Rakhi">
+                            <div class="rakhi-card-badge">✓</div>
+                            <div class="rakhi-art-display">
+                                <div class="rakhi-render-item evileye-rakhi">
+                                    <div class="thread blue-thread left"></div>
+                                    <div class="dial evileye-disc">
+                                        <div class="eye-iris"></div>
+                                    </div>
+                                    <div class="thread blue-thread right"></div>
+                                </div>
+                            </div>
+                            <span class="rakhi-name-label">Evil Eye Nazar Battu</span>
+                        </div>
+
+                        <!-- Rakhi 3: Cute Sibling Cartoon -->
+                        <div class="rakhi-option-card" data-rakhi-id="cartoon" data-rakhi-name="Cute Sibling Cartoon Rakhi">
+                            <div class="rakhi-card-badge">✓</div>
+                            <div class="rakhi-art-display">
+                                <div class="rakhi-render-item cartoon-rakhi">
+                                    <div class="thread red-thread left"></div>
+                                    <div class="dial cartoon-disc">
+                                        <span class="chibi-icon">👫</span>
+                                    </div>
+                                    <div class="thread red-thread right"></div>
+                                </div>
+                            </div>
+                            <span class="rakhi-name-label">Cute Sibling Duo</span>
+                        </div>
+
+                        <!-- Rakhi 4: Mor Pankh Krishna -->
+                        <div class="rakhi-option-card" data-rakhi-id="morpankh" data-rakhi-name="Mor Pankh Feather Rakhi">
+                            <div class="rakhi-card-badge">✓</div>
+                            <div class="rakhi-art-display">
+                                <div class="rakhi-render-item morpankh-rakhi">
+                                    <div class="thread peacock-thread left"></div>
+                                    <div class="dial morpankh-disc">
+                                        <span class="peacock-icon">🪶</span>
+                                    </div>
+                                    <div class="thread peacock-thread right"></div>
+                                </div>
+                            </div>
+                            <span class="rakhi-name-label">Divine Mor Pankh</span>
+                        </div>
+
+                        <!-- Rakhi 5: Golden Pearl Swastik -->
+                        <div class="rakhi-option-card" data-rakhi-id="pearl" data-rakhi-name="Golden Pearl Swastik Rakhi">
+                            <div class="rakhi-card-badge">✓</div>
+                            <div class="rakhi-art-display">
+                                <div class="rakhi-render-item pearl-rakhi">
+                                    <div class="thread gold-thread left"></div>
+                                    <div class="dial pearl-disc">
+                                        <span class="swastik-symbol">卐</span>
+                                    </div>
+                                    <div class="thread gold-thread right"></div>
+                                </div>
+                            </div>
+                            <span class="rakhi-name-label">Golden Pearl Swastik</span>
+                        </div>
+
+                        <!-- Rakhi 6: Emoji Smiley -->
+                        <div class="rakhi-option-card" data-rakhi-id="smiley" data-rakhi-name="Fun Smiley Emoji Rakhi">
+                            <div class="rakhi-card-badge">✓</div>
+                            <div class="rakhi-art-display">
+                                <div class="rakhi-render-item smiley-rakhi">
+                                    <div class="thread red-thread left"></div>
+                                    <div class="dial smiley-disc">
+                                        <span class="smiley-icon">😊</span>
+                                    </div>
+                                    <div class="thread red-thread right"></div>
+                                </div>
+                            </div>
+                            <span class="rakhi-name-label">Fun Smiley Emoji</span>
+                        </div>
+
+                    </div>
+
+                    <div class="choose-action-bar">
+                        <button id="btnUseSelectedRakhi" class="royal-glow-btn">
+                            Use This Rakhi ➔
+                        </button>
+                    </div>
+                </div>  
+            </div>
+
+
+            <!-- ================= STEP 2: DRAG THE RAKHI (REALISTIC TABLE SCENE) ================= -->
+            <div class="rakhi-step-view" id="rakhiStep2" style="display:none;">
+                <div class="realistic-stage-container">
+                    
+                    <!-- Floating Speech Bubble Tooltip -->
+                    <div class="drag-speech-tooltip">
+                        <span>Drag the rakhi and tie it on your brother's wrist ❤️</span>
+                        <div class="tooltip-arrow"></div>
+                    </div>
+
+                    <!-- Realistic Table Scene with Brother's Arm, Puja Thali & Gift Box -->
+                    <div class="realistic-stage-frame">
+                        <img src="rakhi_stage_arm.jpg" alt="Brother's Arm on Festive Table" class="realistic-stage-bg">
+                        
+                        <!-- Interactive Dropzone positioned on Brother's Wrist -->
+                        <div class="wrist-tie-target realistic-drop-pos" id="wristDropzone">
+                            <div class="tie-target-dotted-ring" id="dropPlaceholder">
+                                <span class="ring-pulse"></span>
+                                <span class="drop-label">DROP RAKHI HERE 🎯</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Draggable Selected Rakhi Dock -->
+                    <div class="realistic-rakhi-dock">
+                        <div class="draggable-rakhi-item" id="draggableRakhi" draggable="true" title="Drag me to Brother's Wrist!">
+                            <div class="drag-handle-pill">👆 Drag Rakhi to Wrist</div>
+                            <div class="selected-rakhi-graphic" id="selectedRakhiGraphic">
+                                <!-- Injected by script based on selection -->
+                            </div>
+                        </div>
+
+                        <!-- Controls -->
+                        <div class="drag-controls-row">
+                            <button id="btnQuickTieFallback" class="royal-glow-btn secondary-btn">
+                                ✨ Quick Tie Rakhi
+                            </button>
+                            <button id="btnBackToStep1" class="royal-glow-btn outline-btn">
+                                ◀ Change Rakhi
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <!-- ================= STEP 3: TYING ANIMATION (REALISTIC SISTER'S HANDS) ================= -->
+            <div class="rakhi-step-view" id="rakhiStep3" style="display:none;">
+                <div class="realistic-stage-container">
+                    
+                    <div class="realistic-stage-frame">
+                        <img src="rakhi_stage_tying.jpg" alt="Sister's Hands Tying Rakhi" class="realistic-stage-bg">
+                        <div class="magical-sparkle-overlay">
+                            <span class="sparkle-item sp1">✨</span>
+                            <span class="sparkle-item sp2">💖</span>
+                            <span class="sparkle-item sp3">✨</span>
+                            <span class="sparkle-item sp4">🌟</span>
+                        </div>
+                    </div>
+
+                    <!-- Tying Progress Bar with Beating Heart -->
+                    <div class="tying-progress-wrapper">
+                        <div class="tying-progress-track">
+                            <div class="tying-progress-fill" id="tyingProgressFill"></div>
+                            <span class="tying-progress-heart" id="tyingProgressHeart">💖</span>
+                        </div>
+                        <span class="tying-status-text" id="tyingStatusTxt">Tying Rakhi with Sacred Love...</span>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <!-- ================= STEP 4: RAKHI TIED & SACRED RITUALS (REALISTIC TIED WRIST) ================= -->
+            <div class="rakhi-step-view" id="rakhiStep4" style="display:none;">
+                <div class="realistic-stage-container">
+                    
+                    <div class="success-banner-badge">
+                        <h2>Rakhi Successfully Tied! ❤️</h2>
+                    </div>
+
+                    <div class="realistic-stage-frame">
+                        <img src="rakhi_stage_tied.jpg" alt="Rakhi Successfully Tied" class="realistic-stage-bg">
+                        
+                        <!-- Floating Quote Card -->
+                        <div class="realistic-quote-card">
+                            <p>"Thank you for always being my protector, my support and my best friend ❤️"</p>
+                        </div>
+                    </div>
+
+                    <!-- Interactive Ritual Action Buttons (Tilak, Aarti, Sweets) -->
+                    <div class="ritual-actions-row">
+                        <button id="applyTilakBtn" class="ritual-btn tilak-btn">
+                            <span class="btn-icon">🔴</span>
+                            <span>Apply Tilak</span>
+                        </button>
+
+                        <button id="doAartiBtn" class="ritual-btn aarti-btn">
+                            <span class="btn-icon">🪔</span>
+                            <span>Do Aarti</span>
+                        </button>
+
+                        <button id="offerSweetsBtn" class="ritual-btn sweets-btn">
+                            <span class="btn-icon">🍬</span>
+                            <span>Offer Sweets</span>
+                        </button>
+
+                        <button id="btnGoToStep5" class="ritual-btn celebrate-btn">
+                            <span>Continue to Celebration ➔</span>
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <!-- ================= STEP 5: MESSAGE & CELEBRATION ================= -->
+            <div class="rakhi-step-view" id="rakhiStep5" style="display:none;">
+                <div class="celebration-stage-grid">
+                    
+                    <!-- Left: Sibling Celebration Artwork & Card -->
+                    <div class="celebration-card-main">
+                        <div class="celebration-artwork-wrap">
+                            <img src="sibling_celebration.jpg" alt="Sibling Celebration" class="celebration-img">
+                            <div class="floating-heart-bubble">💖</div>
+                        </div>
+
+                        <div class="celebration-details">
+                            <h2 class="celebration-title">Happy Raksha Bandhan</h2>
+                            <p class="celebration-quote">
+                                "No matter where life takes us, you will always be my superhero! ❤️ Stay happy, stay blessed!"
+                            </p>
+
+                            <div class="celebration-buttons-group">
+                                <button id="btnDownloadCelebCard" class="royal-glow-btn">
+                                    📥 Download Card
+                                </button>
+                                <button id="btnShareCelebWhatsApp" class="royal-glow-btn secondary-btn">
+                                    💬 Share on WhatsApp
+                                </button>
+                                <button id="btnRestartCeremony" class="royal-glow-btn outline-btn">
+                                    🔄 Tie Another Rakhi
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Sample Rakhi Designs Showcase Panel -->
+                    <div class="sample-rakhi-panel">
+                        <h4 class="sample-panel-title">💮 Sample Rakhi Designs ❤️</h4>
+                        
+                        <div class="sample-designs-list">
+                            <div class="sample-mini-card">
+                                <div class="rakhi-render-item kundan-rakhi mini"><div class="dial gold-disc"><div class="ruby-center"></div></div></div>
+                                <span>Royal Kundan</span>
+                            </div>
+                            <div class="sample-mini-card">
+                                <div class="rakhi-render-item cartoon-rakhi mini"><div class="dial cartoon-disc"><span class="chibi-icon">👫</span></div></div>
+                                <span>Sibling Duo</span>
+                            </div>
+                            <div class="sample-mini-card">
+                                <div class="rakhi-render-item morpankh-rakhi mini"><div class="dial morpankh-disc"><span class="peacock-icon">🪶</span></div></div>
+                                <span>Mor Pankh</span>
+                            </div>
+                            <div class="sample-mini-card">
+                                <div class="rakhi-render-item evileye-rakhi mini"><div class="dial evileye-disc"><div class="eye-iris"></div></div></div>
+                                <span>Evil Eye</span>
+                            </div>
+                            <div class="sample-mini-card">
+                                <div class="rakhi-render-item pearl-rakhi mini"><div class="dial pearl-disc"><span class="swastik-symbol">卐</span></div></div>
+                                <span>Golden Pearl</span>
+                            </div>
+                            <div class="sample-mini-card">
+                                <div class="rakhi-render-item smiley-rakhi mini"><div class="dial smiley-disc"><span class="smiley-icon">😊</span></div></div>
+                                <span>Fun Smiley</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Smooth Scroll Next Button -->
+            <div class="section-journey-footer">
+                <a href="#gallerySection" class="journey-next-btn scroll-link">
+                    <span>Next: 3D Memory Gallery</span>
+                    <span class="bounce-arrow">⬇️</span>
+                </a>
+            </div>
+
+        </section>
+
+
+        <!-- ================= 4. SIBLING MEMORY GALLERY WITH 3D ROTATING CAROUSEL ================= -->
+        <section id="gallerySection" class="section-card gallery-section scroll-reveal">
+            <div class="section-title-wrap">
+                <span class="pill-badge">STEP 2 • 3D ROTATING MEMORIES</span>
+                <h2 class="title-text">📸 Sibling Memory Gallery</h2>
+                <p class="subtitle-text">"From fighting over chocolates to sharing lifetime memories ❤️"</p>
+            </div>
+
+            <div class="gallery-toolbar">
+                <div class="category-tabs">
+                    <button class="cat-tab active" data-filter="all">All Memories</button>
+                    <button class="cat-tab" data-filter="childhood">Childhood 👶</button>
+                    <button class="cat-tab" data-filter="funny">Funny Fights 😂</button>
+                    <button class="cat-tab" data-filter="recent">Recent Moments ✨</button>
+                </div>
+
+                <div class="gallery-action-group">
+                    <button id="toggle3DCarouselBtn" class="carousel-3d-toggle-btn">
+                        🔄 3D Rotating Carousel
+                    </button>
+                    <label for="uploadMemoryPhoto" class="upload-photo-label">
+                        ➕ Add Photo & Caption
+                        <input type="file" id="uploadMemoryPhoto" accept="image/*" style="display:none;">
+                    </label>
+                </div>
+            </div>
+
+            <!-- 3D Rotating Cylinder Carousel View -->
+            <div class="carousel-3d-wrapper" id="carousel3DWrapper" style="display:none;">
+                <div class="carousel-3d-stage" id="carousel3DStage">
+                    <div class="carousel-3d-item" style="--i:0;">
+                        <div class="carousel-item-inner">
+                            <img src="memory_rakhi_celebration.jpg" alt="Raksha Bandhan Celebration" class="carousel-photo-img">
+                            <p>Sacred Raksha Bandhan ❤️</p>
+                        </div>
+                    </div>
+                    <div class="carousel-3d-item" style="--i:1;">
+                        <div class="carousel-item-inner">
+                            <img src="memory_family_selfie.jpg" alt="Family Festival Gathering" class="carousel-photo-img">
+                            <p>Family Festival Selfie 📸</p>
+                        </div>
+                    </div>
+                    <div class="carousel-3d-item" style="--i:2;">
+                        <div class="carousel-item-inner">
+                            <img src="memory_birthday_21.jpg" alt="Sister 21st Birthday" class="carousel-photo-img">
+                            <p>21st Birthday Milestone 👑</p>
+                        </div>
+                    </div>
+                    <div class="carousel-3d-item" style="--i:3;">
+                        <div class="carousel-item-inner">
+                            <img src="memory_family_sweet.jpg" alt="Family Sweet Ritual" class="carousel-photo-img">
+                            <p>Parents' Warm Blessings 🌸</p>
+                        </div>
+                    </div>
+                    <div class="carousel-3d-item" style="--i:4;">
+                        <div class="carousel-item-inner">
+                            <img src="memory_birthday_prity.jpg" alt="Birthday Queen Prity" class="carousel-photo-img">
+                            <p>Birthday Queen Prity 🎂</p>
+                        </div>
+                    </div>
+                    <div class="carousel-3d-item" style="--i:5;">
+                        <div class="carousel-item-inner">
+                            <img src="memory_feeding_sweet.jpg" alt="Feeding Sweets Ritual" class="carousel-photo-img">
+                            <p>Feeding Sweets & Love 🍬</p>
+                        </div>
+                    </div>
+                    <div class="carousel-3d-item" style="--i:6;">
+                        <div class="carousel-item-inner">
+                            <img src="memory_tying_rakhi.jpg" alt="Rakhi Tying Memories" class="carousel-photo-img">
+                            <p>Tying Sacred Rakhi 🪢</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-nav-btns">
+                    <button id="prev3DBtn" class="c-nav-btn">◀ Rotate Left</button>
+                    <button id="autoSpin3DBtn" class="c-nav-btn gold">🔄 Auto Rotate: ON</button>
+                    <button id="next3DBtn" class="c-nav-btn">Rotate Right ▶</button>
+                </div>
+            </div>
+
+            <!-- Standard Grid View with 3D Card Hover Tilt -->
+            <div class="memory-grid" id="memoryGrid">
+                
+                <!-- Card 1: Happy Raksha Bandhan Portrait -->
+                <div class="memory-card card-3d-tilt" data-cat="recent">
+                    <div class="card-img-box">
+                        <img class="uploaded-img" src="memory_rakhi_celebration.jpg" alt="Happy Raksha Bandhan Celebration">
+                    </div>
+                    <div class="card-body">
+                        <span class="category-tag">Recent Moments ✨</span>
+                        <p class="caption-text">"A bond of eternal love, care, and protection forever ❤️ Happy Raksha Bandhan!"</p>
+                    </div>
+                </div>
+
+                <!-- Card 2: Festive Family Selfie -->
+                <div class="memory-card card-3d-tilt" data-cat="funny">
+                    <div class="card-img-box">
+                        <img class="uploaded-img" src="memory_family_selfie.jpg" alt="Festive Family Selfie">
+                    </div>
+                    <div class="card-body">
+                        <span class="category-tag">Funny Moments 😂</span>
+                        <p class="caption-text">"Selfie master brothers capturing our craziest, happiest family festival moments together! 📸🎉"</p>
+                    </div>
+                </div>
+
+                <!-- Card 3: 21st Birthday Milestone -->
+                <div class="memory-card card-3d-tilt" data-cat="recent">
+                    <div class="card-img-box">
+                        <img class="uploaded-img" src="memory_birthday_21.jpg" alt="21st Birthday Milestone">
+                    </div>
+                    <div class="card-body">
+                        <span class="category-tag">Recent Moments ✨</span>
+                        <p class="caption-text">"Celebrating 21 glorious years of our beloved sister Prity, blessed with infinite brotherly love 👑✨"</p>
+                    </div>
+                </div>
+
+                <!-- Card 4: Family Sweet Tradition with Parents -->
+                <div class="memory-card card-3d-tilt" data-cat="childhood">
+                    <div class="card-img-box">
+                        <img class="uploaded-img" src="memory_family_sweet.jpg" alt="Family Sweet Tradition">
+                    </div>
+                    <div class="card-body">
+                        <span class="category-tag">Childhood 👶</span>
+                        <p class="caption-text">"Pure family warmth & blessings! Feeding sweets surrounded by Mom & Dad's affectionate smile ❤️"</p>
+                    </div>
+                </div>
+
+                <!-- Card 5: Birthday Celebration Prity -->
+                <div class="memory-card card-3d-tilt" data-cat="recent">
+                    <div class="card-img-box">
+                        <img class="uploaded-img" src="memory_birthday_prity.jpg" alt="Birthday Queen Prity">
+                    </div>
+                    <div class="card-body">
+                        <span class="category-tag">Recent Moments ✨</span>
+                        <p class="caption-text">"The princess of our home cutting cake, pampered endlessly by 4 superhero brothers! 🎂👑"</p>
+                    </div>
+                </div>
+
+                <!-- Card 6: Feeding Sweets with Tilak -->
+                <div class="memory-card card-3d-tilt" data-cat="childhood">
+                    <div class="card-img-box">
+                        <img class="uploaded-img" src="memory_feeding_sweet.jpg" alt="Feeding Sweets Ritual">
+                    </div>
+                    <div class="card-body">
+                        <span class="category-tag">Childhood 👶</span>
+                        <p class="caption-text">"Sacred traditions! Feeding festive sweets with prayers for endless joy, health & success 🍬✨"</p>
+                    </div>
+                </div>
+
+                <!-- Card 7: Sister Tying Rakhi on Brother's Wrist -->
+                <div class="memory-card card-3d-tilt" data-cat="funny">
+                    <div class="card-img-box">
+                        <img class="uploaded-img" src="memory_tying_rakhi.jpg" alt="Tying Rakhi with Smiles">
+                    </div>
+                    <div class="card-body">
+                        <span class="category-tag">Funny Fights 😂</span>
+                        <p class="caption-text">"Tying the sacred Rakhi thread of protection — and claiming my chocolates and gifts right after! 😜🎁"</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Smooth Scroll Next Button -->
+            <div class="section-journey-footer">
+                <a href="#letterSection" class="journey-next-btn scroll-link">
+                    <span>Next: Personal Letter (Typewriter)</span>
+                    <span class="bounce-arrow">⬇️</span>
+                </a>
+            </div>
+        </section>
+
+
+        <!-- ================= 5. PERSONAL LETTER WITH TYPEWRITER EFFECT ================= -->
+        <section id="letterSection" class="section-card letter-section scroll-reveal">
+            <div class="section-title-wrap">
+                <span class="pill-badge">STEP 3 • HEARTFELT WORDS</span>
+                <h2 class="title-text">💌 Personal Letter for My Brothers</h2>
+                <p class="subtitle-text">Click the wax-sealed royal envelope to unfold the emotional letter</p>
+            </div>
+
+            <div class="letter-showcase">
+                <div class="royal-envelope card-3d-tilt" id="envelopeBox">
+                    <div class="envelope-top-flap"></div>
+                    <div class="wax-seal" id="waxSealBtn" title="Click to Open Letter!">
+                        <span class="seal-icon spin-slow">💮</span>
+                        <span class="seal-label">OPEN LETTER</span>
+                    </div>
+                    <div class="envelope-footer">
+                        <p>To My Dearest <span id="envelopeRecipient">Brothers</span> ❤️</p>
+                    </div>
+                </div>
+
+                <div class="unfolded-letter-sheet" id="unfoldedSheet" style="display:none;">
+                    <div class="parchment-border">
+                        <div class="sheet-header">
+                            <span class="sheet-date">Raksha Bandhan 2026</span>
+                            <h3 class="sheet-to">Dearest <span id="letterToName">Amarjit, Ravishankar, Harishankar, Sumit</span>,</h3>
+                        </div>
+
+                        <div class="sheet-content" id="typewriterBody"></div>
+
+                        <div class="sheet-footer">
+                            <p>Forever Yours with Endless Love,</p>
+                            <h4 class="sheet-from" id="letterFromName">Prity ❤️</h4>
+                        </div>
+
+                        <div class="sheet-actions">
+                            <button id="editLetterBtn" class="sheet-btn">✍️ Edit Letter</button>
+                            <button id="retypeLetterBtn" class="sheet-btn gold">🔄 Type Again</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Smooth Scroll Next Button -->
+            <div class="section-journey-footer">
+                <a href="#giftSection" class="journey-next-btn scroll-link">
+                    <span>Next: 3D Surprise Gift Unboxing</span>
+                    <span class="bounce-arrow">⬇️</span>
+                </a>
+            </div>
+        </section>
+
+
+        <!-- ================= 7. SURPRISE GIFT UNBOXING ================= -->
+        <section id="giftSection" class="section-card gift-section scroll-reveal">
+            <div class="section-title-wrap">
+                <span class="pill-badge">STEP 4 • MYSTERY REVEAL</span>
+                <h2 class="title-text">🎁 Surprise Gift Unboxing</h2>
+                <p class="subtitle-text">Click on the luxury 3D gift box to reveal your special surprise blessing!</p>
+            </div>
+
+            <div class="gift-showcase">
+                <div class="gift-3d-box card-3d-tilt" id="giftBox" title="Tap to Open Your Surprise!">
+                    <div class="gift-box-lid" id="giftLid">
+                        <div class="ribbon-bow">🎀</div>
+                    </div>
+                    <div class="gift-box-body">
+                        <div class="ribbon-vertical"></div>
+                        <div class="ribbon-horizontal"></div>
+                        <span class="tap-label">TAP TO OPEN 🎁</span>
+                    </div>
+                </div>
+
+                <div class="voucher-reveal-card" id="revealedVoucher" style="display:none;">
+                    <div class="voucher-inner">
+                        <div class="voucher-badge">👑 OFFICIAL SIBLING VOUCHER</div>
+                        <h3 class="voucher-heading">Lifetime Free Snacks & Unconditional Protection! ❤️</h3>
+                        <div class="voucher-list">
+                            <p>✅ 100% Lifetime Protection from all life's worries</p>
+                            <p>✅ Unlimited Free Snacks & Late Night Gossip Sessions</p>
+                            <p>✅ Immunity from Mom's Scolding Voucher</p>
+                            <p>✅ A forever promise to always stand by each other's side</p>
+                        </div>
+                        <p class="voucher-passcode">COUPON CODE: <strong>PRITY-BROTHERS-2026</strong></p>
+                        <button id="voucherBurstBtn" class="voucher-btn">🎉 Celebrate This Gift!</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Smooth Scroll Next Button -->
+            <div class="section-journey-footer">
+                <a href="#quizSection" class="journey-next-btn scroll-link">
+                    <span>Next: Sibling Fun Quiz</span>
+                    <span class="bounce-arrow">⬇️</span>
+                </a>
+            </div>
+        </section>
+
+
+        <!-- ================= 8. SIBLING QUIZ GAME ================= -->
+        <section id="quizSection" class="section-card quiz-section scroll-reveal">
+            <div class="section-title-wrap">
+                <span class="pill-badge">STEP 5 • FUN SIBLING GAME</span>
+                <h2 class="title-text">🎮 The Ultimate Sibling Quiz</h2>
+                <p class="subtitle-text">Answer fun questions to test your sibling bond & unlock your score!</p>
+            </div>
+
+            <div class="quiz-container">
+                <div class="quiz-progress-track">
+                    <div class="quiz-progress-bar" id="quizBar" style="width: 20%;"></div>
+                </div>
+                <div class="quiz-status-header" id="quizStatusHeader">Question 1 of 5</div>
+
+                <div class="quiz-question-box" id="quizQuestionBox">
+                    <h3 class="q-title" id="qTitle">Who is more naughty & mischievous? 😜</h3>
+                    <div class="q-options-grid" id="qOptionsGrid"></div>
+                </div>
+
+                <div class="quiz-score-card" id="quizScoreCard" style="display:none;">
+                    <div class="trophy-badge">🏆 100% SIBLING BOND SCORE</div>
+                    <h3 class="score-title">Certified Inseparable Siblings! ❤️</h3>
+                    <p class="score-desc">Prity & Brothers have the perfect combination of teasing, fighting, caring, and unconditional love!</p>
+                    <button id="retryQuizBtn" class="quiz-reset-btn">🔄 Play Quiz Again</button>
+                </div>
+            </div>
+
+            <!-- Smooth Scroll Next Button -->
+            <div class="section-journey-footer">
+                <a href="#cardGenSection" class="journey-next-btn scroll-link">
+                    <span>Next: Custom Card Maker</span>
+                    <span class="bounce-arrow">⬇️</span>
+                </a>
+            </div>
+        </section>
+
+
+        <!-- ================= 9. CUSTOM GREETING CARD GENERATOR ================= -->
+        <section id="cardGenSection" class="section-card card-gen-section scroll-reveal">
+            <div class="section-title-wrap">
+                <span class="pill-badge">STEP 6 • INSTANT CARD MAKER</span>
+                <h2 class="title-text">🖼️ Custom Greeting Card Generator</h2>
+                <p class="subtitle-text">Create & download a personalized Rakhi card or share directly on WhatsApp</p>
+            </div>
+
+            <div class="card-generator-grid">
+                <div class="form-side">
+                    <form id="cardMakerForm">
+                        <div class="input-group">
+                            <label for="formSender">Sender's Name :</label>
+                            <input type="text" id="formSender" value="Amarjit, Ravishankar, Harishankar, Sumit">
+                        </div>
+
+                        <div class="input-group">
+                            <label for="formReceiver">Recipient's Name :</label>
+                            <input type="text" id="formReceiver" value="Prity">
+                        </div>
+
+                        <div class="input-group">
+                            <label for="formPhoto">Upload Sibling Photo (optional):</label>
+                            <input type="file" id="formPhoto" accept="image/*">
+                        </div>
+
+                        <div class="input-group">
+                            <label for="formMessage">Wish Message:</label>
+                            <textarea id="formMessage" rows="3">धागों का यह पावन बंधन, सदा रहे खुशहाल आंगन! रक्षाबंधन की ढेर सारी शुभकामनाएँ!</textarea>
+                        </div>
+
+                        <button type="submit" class="royal-glow-btn full-width">
+                            ✨ Update Live Card
+                        </button>
+                    </form>
+                </div>
+
+                <div class="preview-side">
+                    <div class="live-card-frame card-3d-tilt" id="liveCardFrame">
+                        <div class="card-ornament top-left"></div>
+                        <div class="card-ornament top-right"></div>
+                        <div class="card-ornament btm-left"></div>
+                        <div class="card-ornament btm-right"></div>
+
+                        <span class="live-shloka">ॐ भूर्भुवः स्वः 🙏</span>
+                        <h3 class="live-heading">Happy Raksha Bandhan</h3>
+
+                        <div class="live-photo-circle" id="livePhotoBox">
+                            <span class="default-avatar">👸❤️🤴</span>
+                            <img id="livePhotoImg" src="" alt="Sibling Photo" style="display:none;">
+                        </div>
+
+                        <h4 class="live-to">For My Dearest <span id="cardReceiverDisplay">Amarjit, Ravishankar, Harishankar, Sumit</span></h4>
+                        <p class="live-msg" id="cardMsgDisplay">
+                            धागों का यह पावन बंधन, सदा रहे खुशहाल आंगन! रक्षाबंधन की ढेर सारी शुभकामनाएँ!
+                        </p>
+                        <h5 class="live-from">With Eternal Love, <span id="cardSenderDisplay">Prity</span> ❤️</h5>
+
+                        <div class="card-buttons">
+                            <button id="downloadCardBtn" class="card-btn download">📥 Print / Save Card</button>
+                            <button id="shareCardBtn" class="card-btn whatsapp">💬 Share on WhatsApp</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Smooth Scroll Next Button -->
+            <div class="section-journey-footer">
+                <a href="#certificateSection" class="journey-next-btn scroll-link">
+                    <span>Next: Best Sibling Certificate</span>
+                    <span class="bounce-arrow">⬇️</span>
+                </a>
+            </div>
+        </section>
+
+
+        <!-- ================= 10. BEST SIBLING CERTIFICATE ================= -->
+        <section id="certificateSection" class="section-card certificate-section scroll-reveal">
+            <div class="section-title-wrap">
+                <span class="pill-badge">STEP 7 • OFFICIAL HONOUR</span>
+                <h2 class="title-text">🏆 World's Best Sibling Certificate</h2>
+                <p class="subtitle-text">Officially awarded for being the most loving, caring & protective siblings</p>
+            </div>
+
+            <div class="cert-outer-frame">
+                <div class="royal-cert-doc card-3d-tilt" id="royalCertificate">
+                    <div class="cert-inner-border">
+                        <div class="cert-emblem-badge spin-slow">🎖️</div>
+                        <h2 class="cert-main-heading">CERTIFICATE OF EXCELLENCE</h2>
+                        <p class="cert-tag">Presented to the World's Greatest Siblings</p>
+                        
+                        <p class="cert-presents">This is proudly presented to</p>
+                        <h3 class="cert-names" id="certNames">Prity & Amarjit, Ravishankar, Harishankar, Sumit</h3>
+                        
+                        <p class="cert-text">
+                            For unwavering loyalty, endless laughter, protecting each other through every thick and thin, and being the world's most wonderful siblings on this blessed day of Raksha Bandhan 2026.
+                        </p>
+
+                        <div class="cert-bottom-row">
+                            <div class="cert-sign">
+                                <span class="sign-hand">❤️ Eternal Love</span>
+                                <span class="sign-sub">Issued by Heart</span>
+                            </div>
+                            <div class="cert-gold-seal">
+                                <span class="seal-icon spin-slow">👑</span>
+                                <span class="seal-txt">OFFICIAL SEAL</span>
+                            </div>
+                            <div class="cert-sign">
+                                <span class="sign-hand">Raksha Bandhan 2026</span>
+                                <span class="sign-sub">Date of Honour</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cert-print-row">
+                    <button id="printCertBtn" class="royal-glow-btn">🖨️ Print / Save Certificate</button>
+                </div>
+            </div>
+
+            <!-- Smooth Scroll Next Button -->
+            <div class="section-journey-footer">
+                <a href="#wishesSection" class="journey-next-btn scroll-link">
+                    <span>Next: Sibling Wishes Wall</span>
+                    <span class="bounce-arrow">⬇️</span>
+                </a>
+            </div>
+        </section>
+
+
+        <!-- ================= 11. GUEST / SIBLING WISHES WALL ================= -->
+        <section id="wishesSection" class="section-card wishes-section scroll-reveal">
+            <div class="section-title-wrap">
+                <span class="pill-badge">STEP 8 • COMMUNITY WALL</span>
+                <h2 class="title-text">💬 Sibling Wishes & Blessings Wall</h2>
+                <p class="subtitle-text">Leave a sweet wish for your brother or sister</p>
+            </div>
+
+            <div class="wishes-layout">
+                <div class="add-wish-box">
+                    <form id="addWishForm">
+                        <div class="input-group">
+                            <label for="wishNameInput">Your Name:</label>
+                            <input type="text" id="wishNameInput" placeholder="e.g. Prity or Sumit" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="wishTextInput">Your Blessing / Message:</label>
+                            <textarea id="wishTextInput" rows="3" placeholder="Write your heartfelt wish..." required></textarea>
+                        </div>
+                        <button type="submit" class="royal-glow-btn full-width">
+                            💌 Post My Wish on the Wall
+                        </button>
+                    </form>
+                </div>
+
+                <div class="wishes-stream" id="wishesStream">
+                    <div class="wish-bubble">
+                        <div class="wish-meta">
+                            <strong>Prity</strong> <span>• Today</span>
+                        </div>
+                        <p class="wish-body">"Happy Raksha Bandhan to my 4 pillars of strength — Amarjit, Ravishankar, Harishankar & Sumit! Always stay blessed! ❤️✨"</p>
+                    </div>
+
+                    <div class="wish-bubble">
+                        <div class="wish-meta">
+                            <strong>Brothers</strong> <span>• Today</span>
+                        </div>
+                        <p class="wish-body">"Happy Raksha Bandhan Dear sister! Always laughing, always protecting you, and forever loving our sister! 🛡️🍫"</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- ================= EDIT NAMES MODAL ================= -->
+    <div class="modal-backdrop" id="editNamesModal">
+        <div class="modal-box">
+            <button class="modal-close" id="closeNamesModal">&times;</button>
+            <h3>Customize Sibling Names</h3>
+            <p>Update names everywhere on the website</p>
+
+            <form id="namesModalForm">
+                <div class="input-group">
+                    <label for="modalSisInput">Sister's Name:</label>
+                    <input type="text" id="modalSisInput" value="Prity" required>
+                </div>
+                <div class="input-group">
+                    <label for="modalBroInput">Brothers' Names:</label>
+                    <input type="text" id="modalBroInput" value="Amarjit, Ravishankar, Harishankar, Sumit" required>
+                </div>
+                <button type="submit" class="royal-glow-btn full-width">
+                    Save Names Everywhere
+                </button>
+            </form>
+        </div>
+    </div>
+
+
+    <!-- ================= EDIT LETTER MODAL ================= -->
+    <div class="modal-backdrop" id="editLetterModal">
+        <div class="modal-box">
+            <button class="modal-close" id="closeLetterModal">&times;</button>
+            <h3>Edit Letter Text</h3>
+            <p>Customize the emotional letter words</p>
+
+            <form id="letterModalForm">
+                <div class="input-group">
+                    <label for="modalLetterInput">Letter Body:</label>
+                    <textarea id="modalLetterInput" rows="6"></textarea>
+                </div>
+                <button type="submit" class="royal-glow-btn full-width">
+                    Save & Retype Letter
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
